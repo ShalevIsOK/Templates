@@ -11,7 +11,7 @@ public class SmoothDampController : MonoBehaviour
     [SerializeField] float accelerationTime = 0.1f; //time to smooth speeding
     [SerializeField] float deccelerationTime = 0.05f; //time to smooth stopping
 
-    private float _targetHorizontalVelociety;
+    private float targetHorizontalVelociety;
     private Rigidbody2D rb2d;
     private float dampTime;
     private Vector2 smoothDampStorage; //ref for the smooth damping
@@ -26,6 +26,7 @@ public class SmoothDampController : MonoBehaviour
         Walk();
     }
 
+    //public to allow unity invoke
     public void OnWalkInput(InputAction.CallbackContext context)
     {
         if (context.started)
